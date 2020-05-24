@@ -1,0 +1,159 @@
+.dashboard{
+    justify-content: space-between;
+    display: flex;
+    z-index: 1;
+}
+.dashboard > div{
+width: 24%;
+}
+.dashboard > div:hover{
+ 
+    background-color: #CCC;
+}
+.aside-menu{
+    width:145px;
+    left: -145px;
+    transition: all .8s ease-in-out;
+     height:660px;
+     background-color:#EEE; 
+     position:absolute;
+    border: 1px solid #CCC;
+    color: #000;
+   
+ 
+}
+.aside-menu ul li{
+    margin-bottom: 10px;
+    border-bottom: 1px solid #CCC;
+   padding-left: 10px;
+    line-height: 30px;
+}
+.aside-menu ul li:hover{
+    background-color: #3498db;
+    color:#FFF;
+  
+    
+}
+.aside-menu ul li img{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+   
+    margin:12px 0 0 34px;
+}
+.aside-menu ul li i{
+    margin-right: 10px;
+}
+.aside-menu ul li span{
+    color: #e74c3c;
+
+ 
+}
+.aside-menu h5{
+    margin-left: 20px;
+  
+}
+.menu-btn{
+    float: right;
+    margin-right: -16px;
+    z-index: 9;
+    cursor:pointer;
+ 
+  
+}
+*{
+    box-sizing: border-box;
+}
+.form-member{
+    width: 400px;
+    margin: 50px auto;
+}
+.form-member textarea{
+    height: 150px;
+}
+.form-member .btn{
+    margin-top: 12px;
+}
+.cats{
+    float: left;
+}
+.table-bordered{
+    margin: 33px auto;
+}
+.select-categories{
+    height: 33px;
+    width: 400px;
+    background-color: #EEE;
+}
+.select-categories label{
+    margin-right: 22px;
+}
+.post img{
+    width: 400px;
+    height: 200px;
+}
+.post {
+    margin-bottom: 22px;
+}
+.table-bordered{
+    margin-top: 0;
+}
+.posts .btn-success{
+    left: 0;
+    margin-bottom: 63px;
+    position: absolute;
+    margin-left: 180px;
+    top: 100px;
+}
+.tags .btn-success{
+    left: 0;
+    margin-bottom: 63px;
+    position: absolute;
+    margin-left: 180px;
+    top: 100px;
+}
+.tags h2{
+    margin-bottom: 40px;
+}
+
+.images {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+.images >div{
+    width:485px;
+    margin:20px
+
+}
+
+
+.users{
+    justify-content: space-between;
+    display: flex;
+    margin-top: 40px;
+}
+.users table{
+    width: 100%;
+    
+}
+.users table tr:first-child{
+    background-color: rgb(235, 225, 225);
+}
+.users img{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+.users-card{
+    width: 49%;
+}
+.form-member img{
+  margin-bottom: 29px;
+  border-radius: 50%;
+}
+.table-responsive td:hover{
+    background-color: #3498db;
+    color:#FFF;
+}

@@ -1,0 +1,37 @@
+*{
+    box-sizing: border-box;
+}
+.form-member{
+    width: 400px;
+    margin: 50px auto;
+}
+.form-member textarea{
+    height: 150px;
+}
+.form-member .btn{
+    margin-top: 12px;
+}
+.cats{
+    float: left;
+}
+.table-bordered{
+    margin: 33px auto;
+}
+.select-categories{
+    height: 33px;
+    width: 400px;
+    background-color: #EEE;
+}
+.select-categories label{
+    margin-right: 22px;
+}
+.post img{
+    width: 400px;
+    height: 200px;
+}
+.post {
+    margin-bottom: 22px;
+}
+.table-bordered{
+    margin-top: 0;
+}
