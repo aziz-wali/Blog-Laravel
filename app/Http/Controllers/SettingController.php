@@ -39,13 +39,13 @@ class SettingController extends Controller
         'phone'   =>'required'
    ]);
 
-   $setting=Setting::first();
+          $setting=Setting::first();
 
-   $setting->blog_name= $request->blog_name;
-   $setting->address= $request->address;
-   $setting->facebook= $request->facebook;
-   $setting->phone= $request->phone;
-   $setting->save();
-   return redirect()->route('setting');
+          $setting->blog_name= $request->blog_name;
+          $setting->address= $request->address;
+          $setting->facebook= $request->facebook;
+          $setting->phone= $request->phone;
+          $setting->save();
+          return redirect()->route('setting');
     }
 }

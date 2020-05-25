@@ -10,13 +10,19 @@ use App\Profil;
 class User extends Authenticatable implements MustVerifyEmail
 {
     use Notifiable;
-    
- protected function profil()
+
+//function for user <=> Post profile
+
+ public function profil()
  {
 
     return $this->hasOne('App\Profil');
  }
+
+//function for user <=> Post realtions
+
  public function post(){
+
     return $this->hasMany('App\Post');
 }
     /**

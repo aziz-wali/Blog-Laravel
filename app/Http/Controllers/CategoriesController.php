@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Categories;
+use App\Category;
 
 class CategoriesController extends Controller
 {
@@ -20,7 +20,7 @@ class CategoriesController extends Controller
     public function index()
     {
         //
-        return view('categories.index')->with('cats',Categories::all());
+        return view('categories.index')->with('cats',Category::all());
     }
 
     /**
@@ -43,10 +43,12 @@ class CategoriesController extends Controller
     public function store(Request $request)
     {
         //
-       // dd($request->all());
+       // save the  category that user inserted
         Categories::create([
+
             'name'=>$request->name
         ]);
+
         return redirect()->back();
     }
 
@@ -69,8 +71,8 @@ class CategoriesController extends Controller
      */
     public function edit($id)
     {
-        //
-        $category =Categories::find($id);
+        //edit category
+        $category =Category::find($id);
         return view('categories.edit')->with('category', $category);
     }
 
@@ -84,10 +86,12 @@ class CategoriesController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $category =Categories::find($id);
+        $category =Category::find($id);
+        //Validate the Data
         $this->validate($request,[
             'name'=>'required'
         ]);
+        //update data i
         $category->name=$request->name;
         $category->save();
         return redirect()->back();
@@ -101,9 +105,9 @@ class CategoriesController extends Controller
      */
     public function destroy($id)
     {
-        //
-        $category =Categories::find($id);
-        $category->delete();
+        //delete category
+        $category =Category::find($id);
+        $category->delete($id);
         return redirect()->route('categories.index');
     }
 }

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
-use App\Categories;
+use App\Category;
 use App\Tags;
 use App\User;
 use App\Profil;
@@ -32,12 +32,19 @@ class HomeController extends Controller
      
      
         return view('home')->with('posts',Post::all())
-        ->with('categories',Categories::all())
+
+        ->with('categories',Category::all())
+
         ->with('tags',Tags::all())
+
         ->with('users',User::all())
+
         ->with('blog_name',Setting::first()->blog_name)
+
         //->with('avatar',Profil::all())
+        
         ->with('last_users',User::all()->sortByDesc('created_at')->take(3))
+
         ->with('last_posts',Post::all()->sortByDesc('created_at')->take(3));
                             
     }

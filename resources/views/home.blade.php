@@ -9,11 +9,11 @@
    <ul class="list-unstyled" >
        <li>
     
-      <img class="" src="{{Auth::user()->profil->avatar}}">
-      <h5>{{Auth::user()->name}}</h5>
+                <img class="" src="{{Auth::user()->profil->avatar}}">
+                <h5>{{Auth::user()->name}}</h5>
         
         
-        </li>
+       </li>
        <li><i class="fas fa-users"></i>users <span>{{$users->count()}}</span></li>
        <li><i class="far fa-file-alt"></i>Posts</li>
        <li><i class="fab fa-buffer"></i>Categories</li>
@@ -25,7 +25,6 @@
        <li><i class="fas fa-align-right"></i>Widget</li>
        <li><i class="fab fa-buffer"></i>themes</li>
        <li><i class="far fa-file-alt"></i>pages</li>
-       
        <li><i class="fas fa-envelope-open-text"></i>Emails</li>
        <li><i class="fas fa-comment-dots"></i>Chat</li>
        <li><i class="fab fa-buffer"></i>Extra</li>
@@ -34,13 +33,13 @@
  <script>
      var btn = document.querySelector('.menu-btn'),
          menu = document.querySelector('.aside-menu');
-   btn.onclick=function(){
-     if(menu.style.left=='-145px'){
-        menu.style.left=0;
-        this.innerHTML='<i class="fas fa-times"></i>';
-     }else{
-        menu.style.left='-145px';
-        this.innerHTML='<i class="fas fa-align-justify"></i>';
+         btn.onclick=function(){
+         if(menu.style.left=='-145px'){
+         menu.style.left=0;
+         this.innerHTML='<i class="fas fa-times"></i>';
+         }else{
+          menu.style.left='-145px';
+         this.innerHTML='<i class="fas fa-align-justify"></i>';
      }
     }
 </script>
@@ -136,16 +135,16 @@
                         <td>Date</td>
                         <td>Image<td>
                </tr>
-               @foreach($last_users as $user)
-              <tr>
+                @foreach($last_users as $user)
+                <tr>
                         <td>{{$user->name}}</td>
                         <td> {{$user->email}}</td>
                         <td> {{$user->created_at->diffForHumans()}}</td>
                         <td><img src="{{$user->profil->avatar}}"></td>
-                        
-              </tr>
-                @endforeach
-</table>
+                            
+                </tr>
+                    @endforeach
+           </table>
 
 
                
@@ -171,18 +170,18 @@
                         <td>user</td>
                         <td>Date</td>
                         <td>Image<td>
-               </tr>
+                    </tr>
                @foreach($last_posts as $post)
-              <tr>
+                     <tr>
                         <td>{{$post->title}}</td>
                         <td> {{$post->user->name}}</td>
                         <td> {{$post->created_at->diffForHumans()}}</td>
                         <td><img src="{{$post->image}}"></td>
                         
-              </tr>
+                      </tr>
                 @endforeach
-</table>
-</div>
+                    </table>
+                </div>
 </div>
     
 </div>
@@ -192,15 +191,15 @@
 
 <div class="images" >
 
-<div class="card bg-light " >
-  <div class="card-header">Header</div>
-  <img src="upload/2D_B_W_Pie_Chart_1.png">
-</div>
+    <div class="card bg-light " >
+          <div class="card-header">Header</div>
+             <img src="upload/2D_B_W_Pie_Chart_1.png">
+    </div>
 
-<div class="card bg-light" >
-  <div class="card-header">Header</div>
-  <img src="upload/Excel-charts-11.png">
-</div>
+    <div class="card bg-light" >
+          <div class="card-header">Header</div>
+             <img src="upload/Excel-charts-11.png">
+     </div>
 
 </div>
 

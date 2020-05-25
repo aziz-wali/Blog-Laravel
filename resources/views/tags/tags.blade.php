@@ -1,10 +1,11 @@
 @include('includes.header')
-<h2>{{$tag->tag}}</h2>
+
 
 
 		<div class="section">
 			<!-- CONTAINER -->
 			<div class="container">
+			<h2>{{$tag->tag}}</h2>
 				<!-- ROW -->
 				<div class="row">
 					<!-- Main Column -->

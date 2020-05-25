@@ -18,21 +18,32 @@ class ProfilsController extends Controller
 
     { 
         $user = Auth::user();
-       // $id= Auth::user()->id;
-        //dd($user->profil);
+      
+        //check if The user has profile or not
         if($user->profil==null){
+
         Profil::create([
+
             'user_id'=> Auth::user()->id,
+
             'avatar'  => 'upload/avatar.png'
-        ]);}
+
+        ]);
+        }
+
         return view('profile.index')
+
         ->with('user',$user)
-        ->with('blog_name',Setting::first()->blog_name);
+
+        ->with('blog_name',Setting::first()->blog_name)
+
+        // ->with('id',Auth::user()->profil->id)
+        ;
 
         
     
        
-        //->with('profile',Profil::all());
+       
     }
 
     /**
@@ -90,19 +101,29 @@ class ProfilsController extends Controller
     {
         //Errors array
         $messages=['twitter.required'=>'please inesrt twittter field',
+
                   'name.required'=> __('messages.name required'),
+
                   'github.required'=>' this field is required',
     
                    ];
+
         $profile =Profil::find($id);
-        //validate Inputs that user insert
-        $this->validate($request,[
-        "name"=>"required",
-         "twitter"=>"required",
-         "github"=>"required",
-         "facebook"=>""
-        ],
-        $messages
+
+                //validate Inputs that user insert
+
+                $this->validate($request,[
+
+                "name"=>"required",
+
+                "twitter"=>"required",
+
+                "github"=>"required",
+
+                "facebook"=>""
+                ],
+
+             $messages
 
         );
         //check wether the user inserted avatar or not
@@ -113,14 +134,15 @@ class ProfilsController extends Controller
             $profile->avatar= 'upload/'.$newavatar;
 
         }
-        $profile->twitter =$request->twitter;
-        $profile->github =$request->github;
-        $profile->facebook =$request->facebook;
-        Auth::user()->name= $request->name;
-        $profile->save();
-        Auth::user()->save();
-      
-       return back()->with(['success'=>'تم تعديل المعلومات بنجاح']);
+            //update the Data
+            $profile->twitter =$request->twitter;
+            $profile->github =$request->github;
+            $profile->facebook =$request->facebook;
+            Auth::user()->name= $request->name;
+            $profile->save();
+            Auth::user()->save();
+        
+             return back()->with(['success'=>'تم تعديل المعلومات بنجاح']);
     }
 
     /**
@@ -131,6 +153,6 @@ class ProfilsController extends Controller
      */
     public function destroy($id)
     {
-        //
+    //
     }
 }

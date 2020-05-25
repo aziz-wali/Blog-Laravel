@@ -79,8 +79,8 @@ class UsersController extends Controller
     {
         $user=User::find($id);
         // dd($user->profil->avatar);
-      return view('users.edit')
-      ->with('user',$user)
+        return view('users.edit')
+        ->with('user',$user)
       ;
      
      
@@ -110,10 +110,10 @@ class UsersController extends Controller
     }
     public function admin($id)
     {
-     $user=User::find($id);
-     $user->admin=1;
-     $user->save();
-     return redirect()->route('users');
+            $user=User::find($id);
+            $user->admin=1;
+            $user->save();
+            return redirect()->route('users');
 
     }
 }

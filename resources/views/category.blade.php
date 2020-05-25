@@ -1,5 +1,5 @@
 @include('includes.header')
-<h2>{{$category->name}}</h2>
+
 
 
 		</header>
@@ -9,6 +9,7 @@
 		<div class="section">
 			<!-- CONTAINER -->
 			<div class="container">
+			<h2>{{$category->name}}</h2>
 				<!-- ROW -->
 				<div class="row">
 					<!-- Main Column -->

@@ -19,25 +19,36 @@ class PostController extends Controller
  }
 
  public function index(){
-     return view('post.index')->with('posts',Post::all()->sortByDesc('created_at'));
+
+     return view('post.index')
+     
+     ->with('posts',Post::all()->sortByDesc('created_at'));
+
  }
     public function create()
+
     {
-        return view('post.create')->with('cats',Categories::all())->with('tags',Tags::all());
+        return view('post.create')
+        
+        ->with('cats',Categories::all())
+        
+        ->with('tags',Tags::all());
     }
 
     public function edit($id)
+
     {
+
       $post= Post::find($id);
 
-      return view('post.edit')->with('post',$post)->with('cats',Categories::all())
+      return view('post.edit')
+      
+      ->with('post',$post)
+      
+      ->with('cats',Categories::all())
      
       ->with('tags',Tags::all());
 
-
-
-
-      
       return redirect()->route('post');
     }
 
@@ -45,11 +56,18 @@ class PostController extends Controller
     public function store(Request $request)
     {
         
+      // validate the data
+
         $this->validate($request,[
+
             "title" => "required",
+
             "content" => "required",
+
             "category_id"=>"required|numeric",
+
             "image" => "required|image",
+            
             "tags" =>"required"
         ]);
        
@@ -57,7 +75,9 @@ class PostController extends Controller
         $image= $request->image;
 
         $newImage=time().$image->getClientOriginalName();
-
+        
+        //move the Image to the Folder
+        
         $image->move('upload/',$newImage);
 
         
@@ -77,6 +97,7 @@ class PostController extends Controller
         ]);
 
         // dd($request->all());
+
         $post->tags()->attach($request->tags);
        
           return redirect()->route('post');
@@ -86,26 +107,42 @@ class PostController extends Controller
    public function update(Request $request,$id)
    {
         $post=Post::find($id);
+
       $this->validate($request,[
+
         "title" => "required",
+
         "content" => "required",
+
         "category_id"=>"required|numeric"
         
     ]);
    
+    //Check wether the Data have an Image
+
     if($request->hasFile('image')){
+
     $image= $request->image;
 
     $newImage=time().$image->getClientOriginalName();
 
     $image->move('upload/',$newImage);
+
     $post->image= 'upload/'.$newImage;
+
     }
+      //update data
+
     $post->title=$request->title;
+
     $post->content=$request->content;
+
     $post->category_id=$request->category_id;
+
     $post->save();
+
     $post->tags()->sync($request->tags);
+
      return redirect()->route('post');
 
 

@@ -110,10 +110,10 @@
 						<div class="nav-logo">
 							<a href="#" class="logo"><img src="./img/logo-alt.png" alt=""></a>
 						</div>
-						<ul class="main-nav nav navbar-nav">
-							<li class="active"><a href="{{route('index')}}">Home</a></li>
+						<ul class="main-nav nav navbar-nav categories">
+							<li class='active'><a href="{{route('index')}}">Home</a></li>
                             @foreach($cats as $cat)
-                            <li><a href="{{route('category',['id'=>$cat->id])}}">{{$cat->name}}</a></li>
+                            <li class=""> <a href="{{route('category',['id'=>$cat->id])}}">{{$cat->name}}</a></li>
                             @endforeach
 						</ul>
 					</nav>
@@ -141,88 +141,4 @@
 		</header>
 		<!-- /Header -->
 		
-		<!-- Owl Carousel 1 -->
-		<div id="owl-carousel-1" class="owl-carousel owl-theme center-owl-nav">
-			<!-- ARTICLE -->
-			<article class="article thumb-article">
-				<div class="article-img">
-					<img src="" alt="">
-				</div>
-				<div class="article-body">
-					<ul class="article-info">
-						<li class="article-category"><a href="#">News</a></li>
-						<li class="article-type"><i class="fa fa-camera"></i></li>
-					</ul>
-					<h2 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h2>
-					<ul class="article-meta">
-						<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
-						<li><i class="fa fa-comments"></i> 33</li>
-					</ul>
-				</div>
-			</article>
-			<!-- /ARTICLE -->
-			
-			<!-- ARTICLE -->
-			<article class="article thumb-article">
-				<div class="article-img">
-					<img src="" alt="">
-				</div>
-				<div class="article-body">
-					<ul class="article-info">
-						<li class="article-category"><a href="#">News</a></li>
-						<li class="article-type"><i class="fa fa-file-text"></i></li>
-					</ul>
-					<h2 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h2>
-					<ul class="article-meta">
-						<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
-						<li><i class="fa fa-comments"></i> 33</li>
-					</ul>
-				</div>
-			</article>
-			<!-- /ARTICLE -->
-			
-			<!-- ARTICLE -->
-			<article class="article thumb-article">
-				<div class="article-img">
-					<img src="./img/img-lg-3.jpg" alt="">
-				</div>
-				<div class="article-body">
-					<ul class="article-info">
-						<li class="article-category"><a href="#">News</a></li>
-						<li class="article-type"><i class="fa fa-camera"></i></li>
-					</ul>
-					<h2 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h2>
-					<ul class="article-meta">
-						<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
-						<li><i class="fa fa-comments"></i> 33</li>
-					</ul>
-				</div>
-			</article>
-			<!-- /ARTICLE -->
-		</div>
-		<!-- /Owl Carousel 1 -->
-		
-		<!-- SECTION -->
-		<div class="section">
-			<!-- CONTAINER -->
-			<div class="container">
-				<!-- ROW -->
-				<div class="row">
-					<!-- Main Column -->
-					<div class="col-md-12">
-						<!-- section title -->
-						<div class="section-title">
-							<h2 class="title">Trending Posts</h2>
-							<!-- tab nav -->
-							<ul class="tab-nav pull-right">
-								<li class="active"><a data-toggle="tab" href="#tab1">All</a></li>
-								<li><a data-toggle="tab" href="#tab1">News</a></li>
-								<li><a data-toggle="tab" href="#tab1">Sport</a></li>
-								<li><a data-toggle="tab" href="#tab1">Music</a></li>
-								<li><a data-toggle="tab" href="#tab1">Business</a></li>
-								<li><a data-toggle="tab" href="#tab1">Lifestyle</a></li>
-							</ul>
-							<!-- /tab nav -->
-						</div>
-						<!-- /section title -->
-							</header>	
+		<body>

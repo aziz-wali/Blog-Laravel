@@ -32,11 +32,11 @@
 							</div>
 							<div class="article-body">
 								<ul class="article-info">
-							@foreach($cats as $cat)
-							@if($post->category_id== $cat->id)
+					        @foreach($cats as $cat)
+						        	@if($post->category_id== $cat->id)
 									<li class="article-category"><a href="{{route('category',['id'=>$post->category_id])}}">{{$cat->name}}</a></li>
 									@endif
-									@endforeach
+							@endforeach
 									<li class="article-type"><i class="fa fa-file-text"></i></li>
 								</ul>
 								<hr class="separator">
@@ -50,14 +50,14 @@
 								<p>{{$post->content}}</p>
 
 								
-								@foreach($tags as $tag)
+							@foreach($tags as $tag)
 								
 								@foreach($post->tags as $n)
 								@if($n->id==$tag->id)
 								<a class="btn btn-warning btn-sm" href="{{route('showtags',['id'=>$tag->id])}}">{{$tag->tag}}</a>
 								@endif
-								@endforeach
-								@endforeach
+							    @endforeach
+					        @endforeach
 							</div>
 						</article>
 						<!-- /ARTICLE POST -->

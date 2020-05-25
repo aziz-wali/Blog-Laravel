@@ -18,16 +18,17 @@ use App\Mail\TestEmail;
 
 //Auth::routes();
 Auth::routes(['verify'=>true]);
-Route::get('/mylogin','SiteController@mylogin')->name('mylogin');
+//Route::get('/mylogin','SiteController@mylogin')->name('mylogin');
 Route::post('/check','SiteController@check')->name('check');
 Route::get('/home', 'HomeController@index')->name('home');
-//POsts Routes
+
+//all Routes
 Route::group(['prefix'=>'user','middleware'=>'auth'],function(){
 
 
 //Route::get('/createProfile','ProfilsController@create')->name('createProfile');
 
-
+//Post Routes
 
 Route::get('/post/create','PostController@create')->name('post.create');
 Route::post('/post/store','PostController@store')->name('post.store');
@@ -35,15 +36,16 @@ Route::get('/post','PostController@index')->name('post');
 Route::get('/post/edit/{id}','PostController@edit')->name('post.edit');
 Route::post('/post/update/{id}','PostController@update')->name('post.update');
 Route::get('/post/delete/{id}','PostController@destroy')->name('post.delete');
-// Categories route'
+
+
+// Categories routes'
 Route::get('/categories/create','CategoriesController@create')->name('categories.create');
-
-
 Route::post('/categories/store','CategoriesController@store')->name('categories.store');
 Route::get('/categories/index','CategoriesController@index')->name('categories.index');
 Route::get('/categories/edit/{id}','CategoriesController@edit')->name('categories.edit');
 Route::post('/categories/update/{id}','CategoriesController@update')->name('categories.update');
 Route::get('/categories/delete/{id}','CategoriesController@destroy')->name('categories.delete');
+
 //Tags routes 
 Route::get('/tags','TagsController@index')->name('tags');
 Route::get('/tags/create','TagsController@create')->name('tags.create');
@@ -70,18 +72,20 @@ Route::post('/setting/update','SettingController@update')->name('setting.update'
 
 
 
-
+//profile routes
 Route::get('/profile','ProfilsController@index')->name('profile.index');
 Route::post('/profile/update/{id}','ProfilsController@update')->name('profile.update');
 
 Route::get('/search','SiteController@search')->name('search');
 });
+
 Route::get('/testmail',function(){
         $data = ['message' => 'This is a test! hallo aziz'];
 
         Mail::to('aziz.waly6@gmail.com')->send(new TestEmail($data));
         return back();
 });
+
 Route::get('/','SiteController@index')->name('index');
 Route::get('/{slug}','SiteController@singlePage')->name('single');
 Route::get('/category/{id}','SiteController@category')->name('category');
@@ -114,6 +118,4 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');

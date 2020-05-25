@@ -204,6 +204,7 @@
 		<script src="{{asset('js/owl.carousel.min.js')}}"defer ></script> 
 	
 	   <script src="{{asset('js/main.js')}}" defer></script>
+	   <script src="{{asset('js/blog.js')}}" defer></script>
 	   
 	</body>
 </html>

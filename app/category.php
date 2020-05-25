@@ -4,11 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Post;
-class Categories extends Model
+class category extends Model
 {
     //
 
-public function post(){
+ // post category relations function
+
+public function post()
+{
     return $this ->hasMany('App\Post');
 }
     protected $table ='categories';

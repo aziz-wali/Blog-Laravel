@@ -10,7 +10,7 @@ class TagsController extends Controller
 {
     public function index()
     {
-$tags=Tags::all();
+        $tags=Tags::all();
         return view('tags.index')->with('tags',$tags);
     }
 
@@ -26,11 +26,15 @@ $tags=Tags::all();
     public function store(Request $request)
     {
      $this->validate($request,[
+
          "tag"=>"required"
      ]);
+
      Tags::create([
+
          "tag"=>$request->tag
      ]);
+
       return redirect()->route('tags');
 
 
@@ -40,6 +44,7 @@ $tags=Tags::all();
     {
         
        $tags=Tags::find($id);
+
         return view('tags.edit')->with('tags',$tags);
     }
 
@@ -48,10 +53,14 @@ $tags=Tags::all();
     {
         
        $tags=Tags::find($id);
+
        $this->validate($request,[
+
            "tag"=>"required|string"
        ]);
+
        $tags->tag=$request->tag;
+
        $tags->save();
 
 
@@ -65,7 +74,9 @@ $tags=Tags::all();
     {
         
        $tags=Tags::find($id);
+
        $tags->destroy($id);
+       
        return redirect()->route('tags');
 
        

@@ -1,48 +1,72 @@
 @include('includes.header')
 	
-	
+	<!-- Owl Carousel 1 -->
 		
-						<!-- Tab content -->
-						<div class="tab-content">
-							<!-- tab1 -->
-							<div id="tab1" class="tab-pane fade in active">
+	<div id="owl-carousel-1" class="owl-carousel owl-theme center-owl-nav">
+			<!-- ARTICLE -->
+			@foreach($posts as $post)
+			<article class="article thumb-article">
+				<div class="article-img">
+			
+					<img src="{{$post->image}}" alt="">
+					
+				</div>
+				<div class="article-body">
+					<ul class="article-info">
+						<li class="article-category"><a href="#">{{$post -> category->name}}</a></li>
+						<li class="article-type"><i class="fa fa-camera"></i></li>
+					</ul>
+					<h2 class="article-title"><a href="{{route('single',['slug'=>$post->slug])}}">{{$post->title}}</a></h2>
+					<ul class="article-meta">
+						<li><i class="fa fa-clock-o"></i> {{$post->created_at->toFormattedDateString()}}</li>
+						<li><i class="fa fa-comments"></i> 33</li>
+					</ul>
+				</div>
+			</article>
+			@endforeach
+			<!-- /ARTICLE -->
+			
+			</div>
+		<!-- /Owl Carousel 1 -->
+		
+		<!-- SECTION -->
+		<div class="section">
+			<!-- CONTAINER -->
+			<div class="container">
+				<!-- ROW -->
+				<div class="row">
+					<!-- Main Column -->
+					<div class="col-md-12">
+						<!-- section title -->
+						<div class="section-title">
+							<h2 class="title">Trending Posts</h2>
+							<!-- tab nav -->
+							<ul class="tab-nav pull-right">
+								<li class="active"><a data-toggle="tab" href="#tab1">All</a></li>
+								<li><a data-toggle="tab" href="#tab1">News</a></li>
+								<li><a data-toggle="tab" href="#tab1">Sport</a></li>
+								<li><a data-toggle="tab" href="#tab1">Music</a></li>
+								<li><a data-toggle="tab" href="#tab1">Business</a></li>
+								<li><a data-toggle="tab" href="#tab1">Lifestyle</a></li>
+							</ul>
+							<!-- /tab nav -->
+						</div>
+						<!-- /section title -->
+					</div>
+						<!-- /main column  -->
+				</div>
+					<!-- /row  -->
+			</div>
+				<!-- /container  -->
+		</div>
+			<!-- /section  -->
+		
 								<!-- row -->
-							
-								<div class="row">
-								@foreach($posts_row as $post)
-                                    <!-- Column 1 -->
-                               
-									<div class="col-md-6 col-sm-12">
-										<!-- ARTICLE -->
-										<article class="article">
-                                        <div class="article-img customClass">
-												<a href="{{route('single',['slug'=>$post->slug])}}">
-													<img src="{{$post->image}}" alt="">
-												</a>
-												<ul class="article-info">
-													<li class="article-type"><i class="fa fa-camera"></i></li>
-												</ul>
-											</div>
-											<div class="article-body">
-												<h4 class="article-title"><a href="{{route('single',['slug'=>$post->slug])}}">{{$post->title}}</a></h4>
-												<ul class="article-meta">
-													<li><i class="fa fa-clock-o"></i> {{$post->created_at->diffForHumans()}}</li>
-													<li><i class="fa fa-comments"></i> 33</li>
-												</ul>
-											</div>
-										</article>
-										<!-- /ARTICLE -->
-                                    </div>
-									@endforeach
-								
-								</div>
-								<!-- /row -->
-								
-								<!-- row -->
+								<div class="container">
 								<div class="row">
 									<!-- Column 1 -->
 									@foreach($posts as $post)
-									<div class="col-md-4 col-sm-6">
+									<div class="col-md-3 col-sm-6">
 										<!-- ARTICLE -->
 										<article class="article widget-article">
 											<div class="article-img">
@@ -62,7 +86,7 @@
 									</div>
 									@endforeach
 									</div>
-								
+								</div>
 										<!-- /ARTICLE -->
 										
 										<!-- ARTICLE -->
