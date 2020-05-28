@@ -7,7 +7,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-		<title>Aziz Wali</title>
+		<title>Online Blog</title>
 
 		<!-- Google font -->
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CLato:300,400" rel="stylesheet"> 
@@ -96,7 +96,7 @@
 			<div id="center-header">
 				<div class="container">
 					<div class="header-logo">
-						<a href="#" class="logo"><h2>{{$setting}}<h2></a>
+						<a href="/" class="logo" style="width:100px"><img src="./img/b.jpg"></a>
 					</div>
 				
 				</div>

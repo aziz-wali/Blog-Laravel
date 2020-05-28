@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
-use App\Categories;
+use App\Category;
 use Illuminate\Support\Str;
 use App\Tags;
 use Auth;
@@ -30,7 +30,7 @@ class PostController extends Controller
     {
         return view('post.create')
         
-        ->with('cats',Categories::all())
+        ->with('cats',Category::all())
         
         ->with('tags',Tags::all());
     }
@@ -45,7 +45,7 @@ class PostController extends Controller
       
       ->with('post',$post)
       
-      ->with('cats',Categories::all())
+      ->with('cats',Category::all())
      
       ->with('tags',Tags::all());
 

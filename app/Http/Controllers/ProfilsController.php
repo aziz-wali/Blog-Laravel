@@ -142,7 +142,7 @@ class ProfilsController extends Controller
             $profile->save();
             Auth::user()->save();
         
-             return back()->with(['success'=>'تم تعديل المعلومات بنجاح']);
+             return back()->with(['success'=>'your Infos Updated Successfully']);
     }
 
     /**

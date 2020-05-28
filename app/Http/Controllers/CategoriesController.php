@@ -44,7 +44,7 @@ class CategoriesController extends Controller
     {
         //
        // save the  category that user inserted
-        Categories::create([
+        Category::create([
 
             'name'=>$request->name
         ]);
